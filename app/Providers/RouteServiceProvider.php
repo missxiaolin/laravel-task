@@ -16,6 +16,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
 
+    protected $taskNamespace = 'App\Http\Controllers\Task';
+
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -38,6 +40,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+        $this->mapTaskRoutes();
 
         //
     }
@@ -69,5 +73,20 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the "task" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapTaskRoutes()
+    {
+        Route::middleware('task')
+            ->namespace($this->taskNamespace)
+            ->prefix('task')
+            ->group(base_path('routes/task.php'));
     }
 }

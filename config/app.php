@@ -177,6 +177,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // 日志
+        App\Providers\LoggerProvider::class,
+
+        // sql
+        App\Providers\SqlQueryServiceProvider::class,
+
     ],
 
     /*

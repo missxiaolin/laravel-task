@@ -1,4 +1,24 @@
-### swoole 
+### task
+
+supervisor
+
+1.消费
+
+~~~
+[program:task_dispatch]
+command                 = /usr/local/opt/php71/bin/php artisan task:consume --id=%(process_num)02d --max=8
+directory               = /Users/mac/web/miss/laravel-task
+process_name            = %(program_name)s_%(process_num)02d
+stdout_logfile          = /Users/mac/web/miss/laravel-task/storage/logs/supervisor.log
+stdout_logfile_maxbytes = 10MB
+stderr_logfile          = /Users/mac/web/miss/laravel-task/storage/logs/supervisor.log
+stderr_logfile_maxbytes = 10MB
+autostart               = true
+autorestart             = true
+numprocs                = 2
+stopasgroup             = true
+killasgroup             = true
+~~~ 
 
 ### go rpc
 
@@ -24,3 +44,4 @@ brew install elasticsearch
 brew services start kibana
 brew services start elasticsearch
 ~~~
+

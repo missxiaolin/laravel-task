@@ -83,6 +83,7 @@ class Consume extends Command
 
         while (true) {
             $this->doRun();
+            $this->wait($this->sleep);
         }
     }
 
@@ -101,10 +102,9 @@ class Consume extends Command
         try {
             $data['message'] = 'Task Executed.';
             $this->logger($data);
-            $this->wait($this->sleep);
+
         } catch (\Exception $ex) {
             $data['message'] = $ex->getMessage();
-            $this->wait($this->sleep);
         }
     }
 

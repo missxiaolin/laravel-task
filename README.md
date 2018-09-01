@@ -10,6 +10,7 @@ command                 = /usr/local/opt/php71/bin/php artisan task:consume --id
 directory               = /Users/mac/web/miss/laravel-task
 process_name            = %(program_name)s_%(process_num)02d
 stdout_logfile          = /Users/mac/web/miss/laravel-task/storage/logs/supervisor.log
+user                    = nginx
 stdout_logfile_maxbytes = 10MB
 stderr_logfile          = /Users/mac/web/miss/laravel-task/storage/logs/supervisor.log
 stderr_logfile_maxbytes = 10MB

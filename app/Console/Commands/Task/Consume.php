@@ -15,7 +15,7 @@ class Consume extends Command
     protected $signature = 'task:consume
         
         {--id=      : 当前编号}
-        {--max=     : 最大线程}
+        {--max=     : 最大进程}
         {--sleep=   : 休眠多少毫秒}
         {--debug=   : 是否调试模式}
     ';

@@ -32,7 +32,7 @@ class ElasticSearchJournal implements ShouldQueue
 
     /**
      * Execute the job.
-     *
+     * @throws \Exception
      * @return void
      */
     public function handle()

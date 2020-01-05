@@ -123,6 +123,7 @@ class Consume extends Command
     }
 
     /**
+     *
      * 毫秒
      * @param string $time
      */
